@@ -1,184 +1,126 @@
-Machine Learning Assignment 2
+# Machine Learning Assignment 2
+## Income Classification using Multiple ML Models
 
-Income Classification using Multiple ML Models
+---
 
-1\. Problem Statement
+## 1. Problem Statement
 
+The objective of this project is to build and compare multiple machine learning classification models to predict whether an individual's income exceeds $50K per year.
 
+This project demonstrates an end-to-end machine learning workflow including:
 
-The objective of this project is to build and compare multiple machine learning classification models to predict whether an individual's income exceeds $50K per year. The project demonstrates end-to-end machine learning workflow including data preprocessing, model training, evaluation, web application development using Streamlit, and cloud deployment.
+- Data preprocessing
+- Model training
+- Model evaluation
+- Web application development using Streamlit
+- Cloud deployment
 
+---
 
+## 2. Dataset Description
 
-2\. Dataset Description
+This project uses the **Adult Income Dataset** from the UCI Machine Learning Repository.
 
-
-
-This project uses the Adult Income Dataset from the UCI Machine Learning Repository.
-
-
-
-Total Instances: ~32,000
-
-
-
-Total Features: 14
-
-
-
-Target Variable: Income (>50K or <=50K)
-
-
-
-Type: Binary Classification
-
-
+- Total Instances: ~32,000
+- Total Features: 14
+- Target Variable: Income (>50K or <=50K)
+- Problem Type: Binary Classification
 
 The dataset contains demographic and employment-related attributes such as age, education, occupation, hours-per-week, marital status, etc.
 
+---
 
+## 3. Models Implemented
 
-3\. Models Implemented
+The following 6 classification models were implemented and evaluated:
 
+- Logistic Regression
+- Decision Tree Classifier
+- K-Nearest Neighbors (KNN)
+- Naive Bayes (GaussianNB)
+- Random Forest (Ensemble)
+- XGBoost (Ensemble)
 
+---
 
-The following 6 classification models were implemented and evaluated on the same dataset:
+## 4. Evaluation Metrics
 
+Each model was evaluated using:
 
+- Accuracy
+- AUC Score
+- Precision
+- Recall
+- F1 Score
+- Matthews Correlation Coefficient (MCC)
+- Confusion Matrix
 
-Logistic Regression
+---
 
+## 5. Model Comparison Table
 
+| Model | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
+|--------|----------|------|----------|--------|----------|------|
+| Logistic Regression | 0.846 | 0.898 | 0.744 | 0.600 | 0.664 | 0.572 |
+| Decision Tree | 0.813 | 0.752 | 0.628 | 0.647 | 0.637 | 0.512 |
+| KNN | 0.760 | 0.669 | 0.550 | 0.312 | 0.398 | 0.279 |
+| Naive Bayes | 0.791 | 0.831 | 0.689 | 0.320 | 0.438 | 0.366 |
+| Random Forest | 0.849 | 0.904 | 0.733 | 0.639 | 0.683 | 0.588 |
+| XGBoost | 0.870 | 0.927 | 0.781 | 0.678 | 0.726 | 0.644 |
 
-Decision Tree Classifier
+---
 
+## 6. Observations
 
+- Logistic Regression performs well as a strong linear baseline model.
+- Decision Tree shows reasonable performance but may overfit.
+- KNN performs lower due to high dimensionality after encoding.
+- Naive Bayes is limited due to independence assumption.
+- Random Forest improves stability and accuracy.
+- XGBoost achieved the best overall performance across most metrics.
 
-K-Nearest Neighbors (KNN)
+---
 
+## 7. Streamlit Web Application Features
 
+The Streamlit application includes:
 
-Naive Bayes (GaussianNB)
+- CSV Dataset Upload
+- Model Selection Dropdown
+- Evaluation Metrics Display
+- Confusion Matrix Display
 
+---
 
-
-Random Forest (Ensemble)
-
-
-
-XGBoost (Ensemble)
-
-
-
-4\. Evaluation Metrics
-
-
-
-Each model was evaluated using the following metrics:
-
-
-
-Accuracy
-
-
-
-AUC Score
-
-
-
-Precision
-
-
-
-Recall
-
-
-
-F1 Score
-
-
-
-Matthews Correlation Coefficient (MCC)
-
-
-
-5\. Model Comparison Table
-
-| ML Model Name       | Accuracy | AUC   | Precision | Recall | F1 Score | MCC   |
-
-| ------------------- | -------- | ----- | --------- | ------ | -------- | ----- |
-
-| Logistic Regression | 0.846    | 0.898 | 0.744     | 0.600  | 0.664    | 0.572 |
-
-| Decision Tree       | 0.811    | 0.752 | 0.626     | 0.630  | 0.628    | 0.501 |
-
-| KNN                 | 0.760    | 0.669 | 0.550     | 0.312  | 0.398    | 0.279 |
-
-| Naive Bayes         | 0.791    | 0.831 | 0.689     | 0.320  | 0.438    | 0.366 |
-
-| Random Forest       | 0.850    | 0.902 | 0.737     | 0.641  | 0.685    | 0.591 |
-
-| XGBoost             | 0.870    | 0.927 | 0.781     | 0.678  | 0.726    | 0.644 |
-
-
-
-
-
-6\. Observations on Model Performance
-
-ML Model	Observation
-
-Logistic Regression	Performs well as a strong linear baseline model with good AUC score.
-
-Decision Tree	Shows reasonable performance but prone to overfitting.
-
-KNN	Lower performance due to high-dimensional feature space after encoding.
-
-Naive Bayes	Performance limited due to feature independence assumption.
-
-Random Forest	Strong ensemble model with improved stability and accuracy.
-
-XGBoost	Best performing model with highest Accuracy, AUC, F1-score, and MCC.
-
-7\. Streamlit Web Application Features
-
-
-
-The deployed Streamlit application includes:
-
-
-
-CSV Dataset Upload
-
-
-
-Model Selection Dropdown
-
-
-
-Evaluation Metrics Display
-
-
-
-Confusion Matrix Display
-
-
-
-8\. Project Structure
-
-ML\_Assignment\_2/
-
+## 8. Project Structure
+ML_Assignment_2/
 │-- app.py
-
 │-- requirements.txt
-
 │-- README.md
-
 │-- model/
+│   └── training.py
+
+
+---
+
+## 9. Installation & Running the Project
+
+### Step 1: Clone the Repository
+
+git clone https://github.com/Saurav2025aa05427/ML-Assignment-2-
 
 
 
-9\. Deployment
+### Step 2: Install Dependencies
+
+pip install -r requirements.txt
+
+
+### Step 3: Run the Streamlit App
+streamlit run app.py
+
+---
+
+## 10. Deployment
 
 The application is deployed using Streamlit Community Cloud.
-
